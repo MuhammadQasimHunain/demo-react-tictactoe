@@ -1,32 +1,86 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  width: 100%;
   min-height: 100vh;
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  /* atop a solid background add the SVG pattern, on both sides of the page */
+  /* background-repeat: repeat-y; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 25px
+}
+/* global properties */
+h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  color: blue;
+  font-family : arial;
+}
+p {
+  line-height: 3;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: blue;
+  font-family : arial;
 }
 
-.App-link {
-  color: #61dafb;
+
+.Board {
+  /* for the board create a grid of 9 squares, in three columns and rows */
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 2px;
+  margin: 1rem 0 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.Square {
+  /* font-family: var(--font-mono); */
+  font-size: 3rem;
+  font-weight: 900;
+  border: 3px solid black;
+  background: grey;
+  color: yellow;
+  opacity: 0.9;
+
+  /* transition for the hover and active states */
+  transition: all 0.2s ease-out;
+}
+/* on hover slightly increase the size of the square */
+.Square:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+/* when active decrease the size of the square */
+.Square:active {
+  opacity: 1;
+  transform: scale(0.9);
+}
+
+
+/* center the text in the timetravel component */
+.MovesHistory {
+  text-align: center;
+}
+/* remove the bullet points */
+.MovesHistory details ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+/* style each button as a ghost button, flipping the color and background property on hover */
+.MovesHistory button {
+  font-size: 1rem;
+  color: var(--color-text);
+  background: none;
+  transition: all 0.2s ease-out;
+}
+.MovesHistory button:hover {
+  color: blue;
+}
+.MovesHistory button:active {
+  transform: scale(1.5);
 }

@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Game } from './components/gameComponents/Game';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+   constructor(props) {
+      super(props);
+      this.state = { Counter: 1 };
+      this.state = {
+         data:
+            [
+               {
+                  "id": 1,
+                  "name": "Foo",
+                  "age": "20"
+               },
+               {
+                  "id": 2,
+                  "name": "Bar",
+                  "age": "30"
+               },
+               {
+                  "id": 3,
+                  "name": "Baz",
+                  "age": "40"
+               }
+            ]
+      }
+   }
+
+   render() {
+      return (
+         <div>
+            <Game></Game>
+         </div>
+      );
+   }
 }
+
 
 export default App;
